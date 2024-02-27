@@ -31,6 +31,13 @@
   font-size: 5rem;
 }
 
+footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
 @media screen and (min-width: 992px) {
   .form-wrapper {
     width: 50%;
@@ -59,10 +66,13 @@
   main {
     height: 100dvh;
   }
+  footer {
+    position: unset !important;
+  }
 
   .tap-place {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
   .time {
     font-size: 3.4rem;
@@ -72,17 +82,5 @@
     gap: 0.2rem !important;
 
     flex-direction: column;
-  }
-}
-@media screen and (max-width: 576px) {
-  .tap-place {
-    width: 280px;
-    height: 280px;
-  }
-  .time {
-    font-size: 3.4rem;
-  }
-  .timer-wrapper-child {
-    gap: 0.2rem !important;
   }
 }
