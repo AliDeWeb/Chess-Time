@@ -1,3 +1,14 @@
+*,
+*::after,
+*::before {
+  user-select: none;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
 .site-logo {
   width: 50px;
   height: 50px;
@@ -7,9 +18,71 @@
   color: rgba(0, 0, 0, 0.65);
 }
 
+.player-name {
+  font-size: 2.2rem;
+}
+.tap-place {
+  width: 500px;
+  height: 500px;
+
+  cursor: pointer;
+}
+.time {
+  font-size: 5rem;
+}
+
 @media screen and (min-width: 992px) {
   .form-wrapper {
     width: 50%;
     margin: auto;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .tap-place {
+    width: 380px;
+    height: 380px;
+  }
+  .time {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .tap-place {
+    width: 300px;
+    height: 300px;
+  }
+  .time {
+    font-size: 3.4rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    height: 100dvh;
+  }
+
+  .tap-place {
+    width: 300px;
+    height: 300px;
+  }
+  .time {
+    font-size: 3.4rem;
+  }
+
+  .timer-wrapper-child {
+    gap: 0.2rem !important;
+
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 576px) {
+  .tap-place {
+    width: 280px;
+    height: 280px;
+  }
+  .time {
+    font-size: 3.4rem;
+  }
+  .timer-wrapper-child {
+    gap: 0.2rem !important;
   }
 }
