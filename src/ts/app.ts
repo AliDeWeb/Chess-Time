@@ -40,10 +40,6 @@ const timeRegex = /^\d{2}:\d{2}$/i;
 let user1Interval: any;
 let user2Interval: any;
 
-window.addEventListener(`load`, () => {
-  mainSelector.scrollIntoView(true);
-});
-
 submitBtnSelector.addEventListener(`click`, (e) => {
   e.preventDefault();
 
@@ -71,6 +67,7 @@ submitBtnSelector.addEventListener(`click`, (e) => {
     formWrapperSelector.classList.add(`d-none`);
     startCounterWrapperSelector.classList.remove(`d-none`);
     timerWrapperSelector.classList.remove(`d-none`);
+    mainSelector.scrollIntoView(true);
 
     let startCounterInterval = setInterval(() => {
       let counter: number = Number(startCounterSelector.innerHTML);

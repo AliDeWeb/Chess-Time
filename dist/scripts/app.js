@@ -18,9 +18,6 @@ const newGameBtnsSelector = document.querySelectorAll(`.new-game-btns`);
 const timeRegex = /^\d{2}:\d{2}$/i;
 let user1Interval;
 let user2Interval;
-window.addEventListener(`load`, () => {
-    mainSelector.scrollIntoView(true);
-});
 submitBtnSelector.addEventListener(`click`, (e) => {
     e.preventDefault();
     let gameName = gameNameSelector.value.trim()
@@ -43,6 +40,7 @@ submitBtnSelector.addEventListener(`click`, (e) => {
         formWrapperSelector.classList.add(`d-none`);
         startCounterWrapperSelector.classList.remove(`d-none`);
         timerWrapperSelector.classList.remove(`d-none`);
+        mainSelector.scrollIntoView(true);
         let startCounterInterval = setInterval(() => {
             let counter = Number(startCounterSelector.innerHTML);
             if (counter === 1) {

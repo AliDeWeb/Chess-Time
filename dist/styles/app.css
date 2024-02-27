@@ -109,4 +109,8 @@ footer {
 
     flex-direction: column;
   }
+
+  .start-counter span {
+    font-size: 2rem;
+  }
 }
