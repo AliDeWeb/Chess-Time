@@ -10,6 +10,15 @@
     <title>Chess Timer</title>
   </head>
   <body class="bg-dark">
+    <div
+      class="start-counter d-none position-fixed top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center flex-column gap-3"
+    >
+      <span class="py-1 px-5 rounded-5">3</span>
+      <button class="new-game-btns fw-bold btn btn-secondary">
+        New Game...
+      </button>
+    </div>
+
     <header class="bg-dark-subtle py-2 rounded-bottom-3">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
@@ -47,7 +56,7 @@
                 </li>
               </ul>
             </div>
-            <button class="new-game-btn btn fw-bold d-none d-lg-block">
+            <button class="new-game-btns btn fw-bold d-none d-lg-block">
               New Game...
             </button>
           </div>
@@ -57,7 +66,7 @@
 
     <main class="py-3" id="main">
       <div class="container">
-        <div class="form-wrapper d-none">
+        <div class="form-wrapper">
           <form class="text-white">
             <div class="mb-3">
               <label for="game-name" class="form-label">Game Name</label>
@@ -96,36 +105,42 @@
               />
             </div>
 
-            <button type="submit" class="btn btn-outline-primary fw-bold">
+            <button
+              id="submit-btn"
+              type="submit"
+              class="btn btn-outline-primary fw-bold"
+            >
               Let's Play...
             </button>
           </form>
         </div>
 
-        <div class="timer-wrapper">
+        <div class="timer-wrapper d-none">
           <div
             class="timer-wrapper-child d-flex justify-content-center align-items-center gap-5"
           >
             <div>
               <span
+                id="player1-name"
                 class="player-name text-white fw-bold d-block mb-2 text-center"
-                >P1</span
-              >
+              ></span>
               <div
+                data-user="1"
                 class="tap-place rounded-5 d-flex justify-content-center align-items-center bg-warning"
               >
-                <span class="time fw-bold">10:00</span>
+                <span id="player1-time" class="time fw-bold"></span>
               </div>
             </div>
             <div>
               <span
+                id="player2-name"
                 class="player-name text-white fw-bold d-block mb-2 text-center"
-                >P1</span
-              >
+              ></span>
               <div
+                data-user="2"
                 class="tap-place rounded-5 d-flex justify-content-center align-items-center bg-warning"
               >
-                <span class="time fw-bold">10:00</span>
+                <span id="player2-time" class="time fw-bold"></span>
               </div>
             </div>
           </div>

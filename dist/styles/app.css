@@ -9,12 +9,27 @@
   scroll-behavior: smooth;
 }
 
+.start-counter {
+  backdrop-filter: blur(1rem);
+
+  width: 100vw;
+  height: 100dvh;
+  z-index: 9999;
+}
+.start-counter span {
+  font-size: 4rem;
+  color: #fff;
+
+  background-color: #d2691e;
+  font-weight: bold;
+}
+
 .site-logo {
   width: 50px;
   height: 50px;
 }
 
-.new-game-btn {
+.new-game-btns {
   color: rgba(0, 0, 0, 0.65);
 }
 
@@ -26,16 +41,27 @@
   height: 500px;
 
   cursor: pointer;
+
+  transition: all ease-in 10ms 1ms;
+}
+.tap-place:active {
+  background-color: rgb(182, 130, 130) !important;
 }
 .time {
   font-size: 5rem;
 }
-
+label {
+  font-weight: bold;
+}
 footer {
   position: fixed;
   right: 0;
   left: 0;
   bottom: 0;
+}
+
+.bg-red {
+  background-color: #ff0000 !important;
 }
 
 @media screen and (min-width: 992px) {
