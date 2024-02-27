@@ -10,7 +10,7 @@
     <title>Chess Timer</title>
   </head>
   <body class="bg-dark">
-    <header class="bg-info-subtle py-2 rounded-bottom">
+    <header class="bg-dark-subtle py-2 rounded-bottom">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
@@ -55,6 +55,54 @@
       </div>
     </header>
 
+    <main class="py-3">
+      <div class="container">
+        <div class="form-wrapper">
+          <form class="text-white">
+            <div class="mb-3">
+              <label for="game-name" class="form-label">Game Name</label>
+              <input
+                type="text"
+                class="form-control bg-dark-subtle"
+                id="game-name"
+                placeholder="Default: Chess"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="player1" class="form-label">Player 1 Name:</label>
+              <input
+                type="text"
+                class="form-control bg-dark-subtle"
+                id="player1"
+                placeholder="Default: P1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="player2" class="form-label">Player 2 Name:</label>
+              <input
+                type="text"
+                class="form-control bg-dark-subtle"
+                id="player2"
+                placeholder="Default: P2"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="time" class="form-label">Game Time:</label>
+              <input
+                type="text"
+                class="form-control bg-dark-subtle"
+                id="time"
+                placeholder="Default: 10:00min"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary fw-bold">
+              Let's Play...
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
 
     <script src="../libs/bootstrap.js"></script>
     <script src="./scripts/app.js"></script>
