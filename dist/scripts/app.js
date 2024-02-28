@@ -34,7 +34,7 @@ submitBtnSelector.addEventListener(`click`, (e) => {
         : "10:00";
     let isTimeCorrect = timeRegex.test(gameTime);
     if (!isTimeCorrect) {
-        alert(`Enter Currect Time !`);
+        alert(`Enter Correct Time !`);
     }
     else {
         formWrapperSelector.classList.add(`d-none`);
@@ -74,28 +74,6 @@ const decreaseTime = (userId, target) => {
     clearInterval(user2Interval);
     clearInterval(user1Interval);
     if (userId === 1) {
-        let timeSeparator = player1TimeSelector.innerHTML.split(`:`);
-        let minute = Number(timeSeparator[0]);
-        let second = Number(timeSeparator[1]);
-        user1Interval = setInterval(() => {
-            second -= 1;
-            if (second < 0) {
-                second = 59;
-                minute -= 1;
-            }
-            if (minute < 1) {
-                target.classList.add(`bg-red`);
-            }
-            if (minute === 0 && second === 0) {
-                clearInterval(user2Interval);
-                clearInterval(user1Interval);
-                startCounterWrapperSelector.classList.remove(`d-none`);
-                startCounterSelector.innerHTML = `User ${userId} Lost :(`;
-            }
-            player1TimeSelector.innerHTML = `${addLeadingZero(minute)}:${addLeadingZero(second)}`;
-        }, 1000);
-    }
-    if (userId === 2) {
         let timeSeparator = player2TimeSelector.innerHTML.split(`:`);
         let minute = Number(timeSeparator[0]);
         let second = Number(timeSeparator[1]);
@@ -118,6 +96,28 @@ const decreaseTime = (userId, target) => {
                 startCounterSelector.innerHTML = `User ${userId} Lost :(`;
             }
             player2TimeSelector.innerHTML = `${addLeadingZero(minute)}:${addLeadingZero(second)}`;
+        }, 1000);
+    }
+    if (userId === 2) {
+        let timeSeparator = player1TimeSelector.innerHTML.split(`:`);
+        let minute = Number(timeSeparator[0]);
+        let second = Number(timeSeparator[1]);
+        user1Interval = setInterval(() => {
+            second -= 1;
+            if (second < 0) {
+                second = 59;
+                minute -= 1;
+            }
+            if (minute < 1) {
+                target.classList.add(`bg-red`);
+            }
+            if (minute === 0 && second === 0) {
+                clearInterval(user2Interval);
+                clearInterval(user1Interval);
+                startCounterWrapperSelector.classList.remove(`d-none`);
+                startCounterSelector.innerHTML = `User ${userId} Lost :(`;
+            }
+            player1TimeSelector.innerHTML = `${addLeadingZero(minute)}:${addLeadingZero(second)}`;
         }, 1000);
     }
 };

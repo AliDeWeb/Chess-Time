@@ -62,7 +62,7 @@ submitBtnSelector.addEventListener(`click`, (e) => {
   let isTimeCorrect = timeRegex.test(gameTime);
 
   if (!isTimeCorrect) {
-    alert(`Enter Currect Time !`);
+    alert(`Enter Correct Time !`);
   } else {
     formWrapperSelector.classList.add(`d-none`);
     startCounterWrapperSelector.classList.remove(`d-none`);
@@ -113,35 +113,6 @@ const decreaseTime = (userId: number, target: HTMLElement) => {
   clearInterval(user1Interval);
 
   if (userId === 1) {
-    let timeSeparator = player1TimeSelector.innerHTML.split(`:`);
-
-    let minute: number = Number(timeSeparator[0]);
-    let second: number = Number(timeSeparator[1]);
-
-    user1Interval = setInterval(() => {
-      second -= 1;
-
-      if (second < 0) {
-        second = 59;
-        minute -= 1;
-      }
-      if (minute < 1) {
-        target.classList.add(`bg-red`);
-      }
-      if (minute === 0 && second === 0) {
-        clearInterval(user2Interval);
-        clearInterval(user1Interval);
-        startCounterWrapperSelector.classList.remove(`d-none`);
-        startCounterSelector.innerHTML = `User ${userId} Lost :(`;
-      }
-
-      player1TimeSelector.innerHTML = `${addLeadingZero(
-        minute
-      )}:${addLeadingZero(second)}`;
-    }, 1000);
-  }
-
-  if (userId === 2) {
     let timeSeparator = player2TimeSelector.innerHTML.split(`:`);
 
     let minute: number = Number(timeSeparator[0]);
@@ -169,6 +140,35 @@ const decreaseTime = (userId: number, target: HTMLElement) => {
       }
 
       player2TimeSelector.innerHTML = `${addLeadingZero(
+        minute
+      )}:${addLeadingZero(second)}`;
+    }, 1000);
+  }
+
+  if (userId === 2) {
+    let timeSeparator = player1TimeSelector.innerHTML.split(`:`);
+
+    let minute: number = Number(timeSeparator[0]);
+    let second: number = Number(timeSeparator[1]);
+
+    user1Interval = setInterval(() => {
+      second -= 1;
+
+      if (second < 0) {
+        second = 59;
+        minute -= 1;
+      }
+      if (minute < 1) {
+        target.classList.add(`bg-red`);
+      }
+      if (minute === 0 && second === 0) {
+        clearInterval(user2Interval);
+        clearInterval(user1Interval);
+        startCounterWrapperSelector.classList.remove(`d-none`);
+        startCounterSelector.innerHTML = `User ${userId} Lost :(`;
+      }
+
+      player1TimeSelector.innerHTML = `${addLeadingZero(
         minute
       )}:${addLeadingZero(second)}`;
     }, 1000);
